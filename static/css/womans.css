@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Arial, sans-serif';
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #fbe9e7; /* Light pink background */
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+/* Video Section */
+.videoSection {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide any overflow from the video */
+    z-index: 0;
+}
+
+.videoSection video {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the entire area, maintaining aspect ratio */
+    position: absolute; /* Absolute positioning to ensure it fills the container */
+    top: 0;
+    left: 0;
+    transform: scale(10); /* Scale the video to 10 times its original size */
+    transform-origin: center; /* Ensure the scaling occurs from the center */
+}
+
+/* Products Section */
+.products {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.middle-text h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #d32f2f; /* Dark red text color */
+}
+
+.middle-text hr {
+    width: 50px;
+    border: 1px solid #d32f2f;
+    margin: 10px auto;
+}
+
+.product-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+}
+
+.box-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.box h3, .box h4 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.inbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inbox .price {
+    font-size: 1.2em;
+    color: #d32f2f;
+    text-decoration: none;
+}
+
+.inbox .rating a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+

@@ -1,0 +1,53 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/category.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="left-section">
+    <div class="category-list left-category-list">
+      <ul>
+        <li>
+          <a href="{% url 'shop:product_list_by_category' 'beauty' %}" data-border-image="{% static 'dior website pictures\beautylogo.jpg' %}">Beauty</a>
+        </li>
+        <li>
+          <a href="{% url 'shop:product_list_by_category' 'handbags-purse' %}" data-border-image="{% static 'dior website pictures\Multi-bag special.jpg' %}">Handbags & Purse</a>
+        </li>
+        <li>
+          <a href="{% url 'shop:product_list_by_category' 'womans' %}" data-border-image="{% static 'dior website pictures\FeminineDiorLogo.jpg' %}">Womans</a>
+        </li>
+        <li>
+          <a href="{% url 'shop:product_list_by_category' 'womans-shoes' %}" data-border-image="{% static 'dior website pictures\womans-shoes Dior logo.jpg' %}">Woman's Shoe</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="right-section">
+    <div class="category-list right-category-list">
+      <ul>
+        <li>
+          <a href="{% url 'shop:product_list_by_category' 'cologne' %}" data-border-image="{% static 'dior website pictures\mens cologne dior logo.jpg' %}">Cologne</a>
+        </li>
+        <li>
+          <a href="{% url 'shop:product_list_by_category' 'mens' %}" data-border-image="{% static 'dior website pictures\mens dior logo.jpg' %}">Mens</a>
+        </li>
+        <li>
+          <a href="{% url 'shop:product_list_by_category' 'mens-shoes' %}" data-border-image="{% static 'dior website pictures\mens shoes dior logo.jpg' %}">Mens Shoes</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-section">
+    <div class="category-list bottom-category-list">
+      <ul>
+        <li>
+          <a href="{% url 'shop:product_list_by_category' 'kids' %}" data-border-image="{% static 'dior website pictures\Dior model background kids.jpg' %}">Kids</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

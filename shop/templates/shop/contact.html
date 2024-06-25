@@ -1,0 +1,22 @@
+{% extends "shop/base.html" %} {% load static %} {% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'shop/contact.css' %}" />
+<script src="{% static 'shop/contact.js' %}"></script>
+{% endblock %} {% block content %}
+<section class="contact-section">
+  <h2>Contact Dior</h2>
+  <form method="post" action="{% url 'shop:contact' %}">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <ul>
+    {% for faq in faqs %}
+    <li><strong>{{ faq.question }}</strong></li>
+    <li>{{ faq.answer }}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

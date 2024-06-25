@@ -1,0 +1,47 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block title %}
+    User Profile
+{% endblock %}
+
+{% block content %}
+
+
+    <main>
+        <section id="user-info">
+            <h2>User Information</h2>
+            <!-- Display user information dynamically -->
+            <div class="user-details">
+                <p><strong>Name:</strong> {{ user.username }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <!-- Add more user details as needed -->
+            </div>
+        </section>
+
+        <section id="orders">
+            <h2>Previous Orders</h2>
+            <!-- Placeholder for displaying previous orders -->
+            <div class="orders-list">
+                <p>No orders yet.</p>
+            </div>
+        </section>
+
+        <section id="favorites">
+            <h2>Favourite Items</h2>
+            <!-- Placeholder for displaying favorite items -->
+            <div class="favorites-list">
+                <p>No favorite items yet.</p>
+            </div>
+        </section>
+
+        <section id="track-order">
+            <h2>Track My Order</h2>
+            <!-- Add form or link to track order -->
+            <p>Coming soon.</p>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "shop/base.html" %}
+
+{% load static %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<h2>{% if category %}{{ category.name }}{% else %}All Products{% endif %}</h2>
+
+<!-- Sorting Options -->
+<div class="sorting-options">
+    <button id="sort-price">Sort by Price (High to Low)</button>
+    <button id="sort-rating">Sort by Rating</button>
+    <button id="sort-trendy">Trendy Selections</button>
+</div>
+
+<div class="product-list">
+    {% for product in products %}
+    <div class="product">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>${{ product.price }}</p>
+        <p>Rating: {{ product.rating }}</p>
+        <a href="{% url 'shop:product_detail' product.id product.slug %}">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Link the JavaScript file -->
+<script src="{% static 'js/sort_products.js' %}"></script>
+{% endblock %}
+

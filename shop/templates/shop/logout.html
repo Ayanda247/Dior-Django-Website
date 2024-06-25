@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+.logout-message {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.2em;
+    color: #333;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<meta http-equiv="refresh" content="2; url={% url 'shop:home' %}">
+<div class="logout-message">
+    <p>You have been logged out. Redirecting to the home page...</p>
+</div>
+{% endblock %}
+

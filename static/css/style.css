@@ -1,0 +1,465 @@
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --bg-color: #dbdcdf;
+  --text-color: #ffffff;
+  --main-color: #6b7280;
+  --other-color: #797979;
+  --big-font: 4.3rem;
+  --h2-font: 2.2rem;
+  --p-font: 1rem;
+}
+
+html, body {
+  color: var(--text-color);
+  background: var(--bg-color);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  padding: 17px 18%;
+  border-bottom: 1px solid #f7f9fb;
+  transition: all .40s ease;
+}
+
+header a, header i {
+  color: #fff;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55px; /* Adjust the width as needed */
+}
+
+.logo img {
+  width: 100%;
+  max-width: 100%; /* Ensures the image doesn't exceed its container */
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  font-size: var(--p-font);
+  color: var(--text-color);
+  font-weight: 400;
+  padding: 10px 25px;
+  margin: 0 5px;
+  background: transparent;
+  border-radius: 30px;
+  transition: all .40s ease;
+}
+
+.navbar a:hover {
+  border: #f7f9fb;
+}
+
+.navbar a.active {
+  background: #f7f9fb;
+}
+
+/* Sub-navbar styles */
+li:hover .sub-navbar,
+.sub-navbar:hover {
+    display: block;
+}
+
+.sub-navbar {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 17%; /* Adjust this value to move the sub-navbar more to the right */
+    background-color: #fff; /* Change as needed */
+    padding: 10px;
+    border: 1px solid #ccc; /* Change as needed */
+    border-top: none;
+    z-index: 1000; /* Ensure it's above other content */
+    width: max-content; /* Ensures the width adjusts to its content */
+}
+
+.sub-navbar a {
+    display: block;
+    color: #333; /* Change as needed */
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.sub-navbar a:hover {
+    background-color: #f0f0f0; /* Change as needed */
+}
+
+/* Style to lock the sub-navbar */
+.sub-navbar.locked {
+    display: block !important;
+}
+
+
+.icon {
+  display: flex;
+  align-items: center;    
+}
+
+.icon i {
+  font-size: 18px;
+  color: var(--text-color);
+  height: 50px;
+  width: 50px;
+  background: #f7f9fb;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--text-color);
+  font-size: 22px;
+  margin-right: 25px;
+  margin-left: 10px;
+  transition: all .40s ease;
+}
+
+.icon i:hover {
+  transform: scale(0.9);
+}
+
+#menu-icon {
+  font-size: 35px;
+  color: var(--text-color);
+  z-index: 10001;
+  cursor: pointer;
+  display: none;
+}
+
+header.sticky {
+  background: var(--bg-color);
+  padding: 14px 11%;
+}
+
+/* Section Styles */
+section {
+  padding: 100px 11% 90px;
+}
+
+.home {
+  height: 100vh;
+  width: 100%;
+  background-color: #dbdcdf;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.home-img {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-text {
+  background-position: center; /* Center the background image */
+  padding: 50px; /* Add padding as needed */
+  text-align: center; /* Center-align the text */
+}
+
+.home-text h4 {
+  font-size: 15px;
+  font-style: cursive;
+  color: #080808;
+}
+
+.home-text h1 {
+  font-size: var(--big-font);
+  font-weight: 700;
+  color: rgb(113,153,212);
+  margin: 25px 0 45px;
+  line-height: 1.2;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 45px;
+  background: #f7f9fb;
+  color: var(--main-color);
+  font-size: var(--p-font);
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 30px;
+  transition: all .40s ease;
+  position: absolute; /* Set position relative to the nearest positioned ancestor */
+}
+
+.btn:hover {
+  transform: scale(0.9);
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+/* Additional Section Styles */
+.middle-text h2 {
+  font-size: var(--h2-font);
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.feature-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+/* Carousel Styles */
+.slide-item {
+  position: relative;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide-item > img {
+  display: grid;
+  width: 250px;
+  height: 250px;
+  object-position: contain;
+  object-fit: center;
+  border-radius: 100px;
+}
+
+.slide-item:not([data-active]) {
+  display: none;
+}
+
+.slide-item[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel {
+  width: 50vh;
+  height: auto;
+  position: relative;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  top: 39%;
+  color: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  border-radius: .25rem;
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: rgb(0, 0, 0);
+  background-color: rgba(0,0,0, .2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 4rem;
+}
+
+/* Video Section Styles */
+.video-section {
+  position: relative; /* Changed to relative to avoid overflow */
+  top: 100px;
+  width: 100%; /* Adjust the width to fit within the container */
+  display: flex;
+  justify-content: center; /* Center the video horizontally */
+}
+
+.video-section video {
+  max-width: 100%; /* Make sure the video fits within the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .video-section {
+      width: 100%;
+      top: 0;
+  }
+}
+
+/* Product Styles */
+.products {
+  padding: 50px 0;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Ensure products are above the video */
+  margin-top: -100vh; /* Adjust to pull up the products section */
+}
+
+.products .product-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.products .box {
+  width: 250px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+}
+
+.products .box-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.products .inbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.products .price {
+  color: #333;
+  font-weight: bold;
+}
+
+.products .rating {
+  color: #ffc107; /* Gold color for rating stars */
+}
+
+.bottom-text {
+  margin-top: 30px;
+}
+
+.bottom-text h2 {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Button styles */
+.row-btn {
+  display: inline-block;
+  padding: 15px;
+  background: #080808;
+  color: var(--bg-color);
+  font-size: var(--p-font);
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 30px;
+  transition: all .40s ease;
+  position: relative; /* Set position relative to the nearest positioned ancestor */
+  bottom: -95px; /* Adjust the distance from the bottom */
+  right: -105px; /* Adjust the distance from the right */
+  border-radius: 30px;
+  transition: all .40s ease;
+}
+
+.row-btn:hover {
+  letter-spacing: 1px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f0f0f0;
+  padding: 20px 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-form {
+  display: flex;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form button {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.company-logo {
+  width: 100px;
+  height: auto;
+}
+
+.social-links {
+  display: flex;
+}
+
+.social-link {
+  margin-left: 10px;
+}
+
+.social-link img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+

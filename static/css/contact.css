@@ -1,0 +1,53 @@
+.contact-section, .faq-section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.contact-section h2, .faq-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section form input, .contact-section form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #00796b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact-section form button:hover {
+    background: #005a50;
+}
+
+.faq-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-section li {
+    margin-bottom: 20px;
+}
+
+.faq-section li strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #00796b;
+}

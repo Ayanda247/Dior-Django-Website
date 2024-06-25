@@ -1,0 +1,204 @@
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+  
+:root {
+    --bg-color: #dbdcdf;
+    --text-color: #ffffff;
+    --main-color: #6b7280;
+    --other-color: #797979;
+    --big-font: 4.3rem;
+    --h2-font: 2.2rem;
+    --p-font: 1rem;
+}
+
+html, body {
+    color: var(--text-color);
+    background: var(--bg-color);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container for Video Section and Products Section */
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+/* General body styles */
+body {
+    font-family: 'Lora', serif; /* Elegant serif font */
+    background-color: #f5f5f5; /* Light background */
+    color: #333; /* Dark text for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Products Section */
+.products {
+    padding: 50px 0;
+}
+
+.middle-text {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #2c3e50; /* Dark masculine color */
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.middle-text h2 {
+    font-size: var(--h2-font);
+    color: var(---other-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.middle-text hr {
+    width: 50px;
+    height: 3px;
+    background-color: #e74c3c; /* Bold accent color */
+    border: none;
+    margin: 20px auto;
+}
+
+* Products Section */
+.products {
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure products are above the video */
+    margin-top: -100vh; /* Adjust to pull up the products section */
+}
+
+.products .product-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.products .box {
+    width: 250px;
+    margin: 10px;
+    border: 1px solid #000000;
+    padding: 15px;
+    text-align: left;
+}
+
+.products .box-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.products .inbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.products .price {
+    color: #333;
+    font-weight: bold;
+}
+
+.products .rating {
+    color: #ffc107; /* Gold color for rating stars */
+}
+
+
+.box {
+    width: 300px;
+    margin: 15px;
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.box-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.box h3, .box h4 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.box .inbox {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 15px;
+}
+
+.price {
+    color: #27ae60; /* Masculine green color */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.rating a {
+    color: #f39c12; /* Gold color for stars */
+}
+
+/* Quotes Carousel Section */
+.quotes-carousel {
+    background-color: #34495e; /* Darker masculine background */
+    padding: 80px 0; /* Increased padding for bigger carousel */
+    text-align: center;
+    color: #000000; /* Light text for contrast */
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 90%; /* Increased width for bigger carousel */
+    margin: 0 auto;
+    border: 5px solid rgb(0, 0, 0); /* White border */
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 40px; /* Increased padding for bigger carousel */
+    font-size: 8em; /* Increased font size */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+    font-style: cursive; /* Text in cursive */
+    color: black; /* Black text */
+}
+
+[data-active] {
+    opacity: 1;
+    display: block;
+}
+
+/* Remove Carousel Navigation Buttons */
+[data-carousel-button] {
+    display: none; /* Hide the arrows */
+}
+

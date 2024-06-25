@@ -1,0 +1,82 @@
+{% extends "shop/base.html" %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'shop/mens.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'shop/mens.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<section class="home">
+    <div class="home-text">
+        <h4>                                        </h4>
+        <h1>                    </h1>
+        
+    </div>
+    <div class="home-img">
+        <img src="{% static 'dior website pictures/Blue Background.jpg' %}" alt="Blue Background">
+    </div>
+</section>
+<!-- Products Section with Mens Touch -->
+<section class="products">
+    <div class="middle-text">
+        <h2>New Arrivals<hr>  </h2>
+    </div>
+    
+    <div class="product-content">
+        {% for product in products %}
+            <div class="box">
+                <div class="box-img">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </div>
+                <h3>{{ product.name }}</h3>
+                <h4>{{ product.category.name }}</h4>
+                <div class="inbox">
+                    <div>
+                        <a href="#" class="price">${{ product.price }}</a>
+                    </div>
+                    <div class="rating">
+                        {% for i in "12345" %}
+                            <a href="#"><i class="ri-star-fill"></i></a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Quotes Carousel Section -->
+<section class="quotes-carousel">
+    <div class="carousel-container" data-carousel>
+        <ul class="carousel-slides" data-slide-item>
+            <li class="slide-item" data-active>“Style is a way to say who you are without having to speak.”</li>
+            <li class="slide-item">“Fashion is the armor to survive the reality of everyday life.”</li>
+            <li class="slide-item">“Elegance is not standing out, but being remembered.”</li>
+            <li class="slide-item">“A well-tied tie is the first serious step in life.”</li>
+            <li class="slide-item">“The difference between style and fashion is quality.”</li>
+            <li class="slide-item">“Good grooming and hygiene are essential.”</li>
+            <li class="slide-item">“The best color in the whole world is the one that looks good on you.”</li>
+            <li class="slide-item">“Being perfectly well-dressed gives one a tranquility that no religion can bestow.”</li>
+            <li class="slide-item">“Fashion is about something that comes from within you.”</li>
+            <li class="slide-item">“To achieve the nonchalance which is absolutely necessary for a man, one article at least must not match.”</li>
+            <li class="slide-item">“Clothes mean nothing until someone lives in them.”</li>
+            <li class="slide-item">“A man should look as if he had bought his clothes with intelligence, put them on with care, and then forgotten all about them.”</li>
+            <li class="slide-item">“Dressing well is a form of good manners.”</li>
+            <li class="slide-item">“Fashion fades, only style remains the same.”</li>
+            <li class="slide-item">“Simplicity is the ultimate sophistication.”</li>
+            <li class="slide-item">“Fashion should be a form of escapism, and not a form of imprisonment.”</li>
+            <li class="slide-item">“The joy of dressing is an art.”</li>
+            <li class="slide-item">“Style is knowing who you are, what you want to say, and not giving a damn.”</li>
+            <li class="slide-item">“To be noticed without striving to be noticed, this is what elegance is about.”</li>
+            <li class="slide-item">“You can never be overdressed or overeducated.”</li>
+        </ul>
+    </div>
+</section>
+
+{% endblock %}
+
+

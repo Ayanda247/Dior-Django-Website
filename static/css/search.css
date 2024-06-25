@@ -1,0 +1,76 @@
+.icons {
+    display: flex;
+    gap: 15px;
+}
+/* Initially hide the search bar */
+.search-bar {
+    display: none;
+    position: absolute;
+    top: 70px; /* Adjust according to your header's height */
+    right: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 200px;
+    padding: 10px;
+}
+
+/* Show the search bar when it's not hidden */
+.search-bar:not(.hidden) {
+    display: block;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#searchResults {
+    margin-top: 10px;
+}
+
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.search-result-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.search-result-item span {
+    font-size: 16px;
+}
+
+.product-result {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.product-result img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.product-result h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.product-result p {
+    margin: 0;
+    color: #888;
+}

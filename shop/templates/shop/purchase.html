@@ -1,0 +1,21 @@
+<!-- payment options and purchase form -->
+<form method="post">
+    {% csrf_token %}
+    <!-- form fields for payment information -->
+    <!-- For simplicity, let's assume payment method is selected via radio buttons -->
+    <input type="radio" name="payment_method" value="Mastercard"> Mastercard<br>
+    <input type="radio" name="payment_method" value="Visa"> Visa<br>
+    <input type="radio" name="payment_method" value="American Express"> American Express<br>
+    <input type="radio" name="payment_method" value="Paypal"> Paypal<br>
+    <input type="radio" name="payment_method" value="Eft"> Eft<br>
+    
+    <!-- other fields for user information -->
+    <input type="text" name="first_name" placeholder="First Name">
+    <!-- other fields for user information -->
+    
+    <!-- hidden field to store product id -->
+    <input type="hidden" name="product_id" value="{{ product_id }}">
+    
+    <button type="submit">Pay Now</button>
+</form>
+

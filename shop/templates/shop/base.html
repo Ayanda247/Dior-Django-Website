@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dior</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'shop/search.css' %}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'shop/search.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <a href="{% url 'shop:home' %}" class="logo">
+          <img src="{% static 'dior website pictures/Dior logo (black).jpg' %}" alt="Dior Logo" />
+      </a>
+      <ul class="navbar">
+          <li>
+              <a href="{% url 'shop:home' %}">Home</a>
+              <!-- Sub-navbar for Home -->
+              <div class="sub-navbar">
+                  <a href="{% url 'shop:categories' %}">Categories</a>
+                  <a href="#">Shop Now</a>
+              </div>
+          </li>
+          <li><a href="{% url 'shop:womans' %}">Womans</a></li>
+          <li><a href="{% url 'shop:mens' %}">Mens</a></li>
+          <li><a href="{% url 'shop:cologneandbeauty' %}">Cologne & Beauty</a></li>
+          <li><a href="{% url 'shop:contact' %}">Contact</a></li>
+      </ul>
+      <div class="icons">
+          <a href="#" id="searchIcon"><i class="ri-search-line"></i></a>
+          {% if user.is_authenticated %}
+              <a href="{% url 'shop:profile' %}"><i class="ri-user-3-line"></i></a>
+              <a href="{% url 'shop:logout' %}">Logout</a>
+          {% else %}
+              <a href="{% url 'shop:login' %}">Login</a>
+              <a href="{% url 'shop:register' %}">Sign Up</a>
+          {% endif %}
+          <a href="#"><i class="ri-shopping-cart-line"></i></a>
+      </div>
+  
+      <!-- Search Bar -->
+      <div id="searchBar" class="search-bar hidden">
+          <input type="text" id="searchInput" placeholder="Search for products..." />
+          <div id="searchResults"></div>
+      </div>
+  
+      <div class="bx bx-menu" id="menu-icon"></div>
+  </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>
+      
+      <!-- Footer content -->
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Collaborations</a>
+          <a href="#">Store Locations</a>
+          <a href="#">Specials</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <form class="contact-form">
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="tel" placeholder="Phone" />
+          <button type="submit">Submit</button>
+        </form>
+        <div class="social-links">
+          <a href="#" class="social-link"
+            ><img
+              src="{% static 'dior website pictures/instagram_icon.jpg' %}"
+              alt="Instagram"
+          /></a>
+          <a href="#" class="social-link"
+            ><img
+              src="{% static 'dior website pictures/facebook_icon.jpg' %}"
+              alt="Facebook"
+          /></a>
+          <a href="#" class="social-link"
+            ><img
+              src="{% static 'dior website pictures/tiktok_icon.jpg' %}"
+              alt="TikTok"
+          /></a>
+          <a href="#" class="social-link"
+            ><img
+              src="{% static 'dior website pictures/youtube_icon.jpg' %}"
+              alt="YouTube"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
