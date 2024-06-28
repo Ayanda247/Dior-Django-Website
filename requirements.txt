@@ -3,7 +3,7 @@ djangorestframework==3.13.1
 Pillow==9.0.1
 django-crispy-forms==1.13.0
 django-debug-toolbar==3.2.4
-django-media==0.1.2  # Example package, replace with actual if needed
+django-media==1.0.1
 # Add other dependencies as needed
 
 
