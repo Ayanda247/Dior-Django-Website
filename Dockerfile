@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     gcc \
     libpq-dev \
     musl-dev \
+    zlib1g-dev \
     && apt-get clean
 
 # Install Python dependencies
