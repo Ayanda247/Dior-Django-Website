@@ -8,8 +8,16 @@
 import os
 import sys
 import django
-sys.path.insert(0, os.path.abspath('..'))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'shop.settings'
+
+# Add the project directory to the sys.path
+sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../diorwebsite'))
+sys.path.insert(0, os.path.abspath('../shop'))
+
+# Set the Django settings module
+os.environ['DJANGO_SETTINGS_MODULE'] = 'diorwebsite.settings'
+
+# Setup Django
 django.setup()
 
 

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shop.forms &mdash; Dior-Django-Website 00.00.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d7bb8d4d"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Dior-Django-Website
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">shop</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Dior-Django-Website</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">shop.forms</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for shop.forms</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+
+<div class="viewcode-block" id="UserRegistrationForm">
+<a class="viewcode-back" href="../../shop.html#shop.forms.UserRegistrationForm">[docs]</a>
+<span class="k">class</span> <span class="nc">UserRegistrationForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Form for user registration.</span>
+
+<span class="sd">    :param username: CharField for username with validation on length and widget for styling.</span>
+<span class="sd">    :type username: django.forms.CharField</span>
+<span class="sd">    :param email: EmailField for email with validation on length and widget for styling.</span>
+<span class="sd">    :type email: django.forms.EmailField</span>
+<span class="sd">    :param password1: CharField for password with validation on length and widget for password input.</span>
+<span class="sd">    :type password1: django.forms.CharField</span>
+<span class="sd">    :param password2: CharField for confirming password with validation on length and widget for password input.</span>
+<span class="sd">    :type password2: django.forms.CharField</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">username</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">min_length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;form-control&#39;</span><span class="p">})</span>
+    <span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+        <span class="n">min_length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">EmailInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;form-control&#39;</span><span class="p">})</span>
+    <span class="p">)</span>
+    <span class="n">password1</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">min_length</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;form-control&#39;</span><span class="p">})</span>
+    <span class="p">)</span>
+    <span class="n">password2</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Confirm Password&#39;</span><span class="p">,</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">min_length</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;form-control&#39;</span><span class="p">})</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PaymentForm">
+<a class="viewcode-back" href="../../shop.html#shop.forms.PaymentForm">[docs]</a>
+<span class="k">class</span> <span class="nc">PaymentForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Form for payment details.</span>
+
+<span class="sd">    :param payment_method: ChoiceField for selecting payment method with predefined choices and radio widget.</span>
+<span class="sd">    :type payment_method: django.forms.ChoiceField</span>
+<span class="sd">    :param first_name: CharField for first name.</span>
+<span class="sd">    :type first_name: django.forms.CharField</span>
+<span class="sd">    :param last_name: CharField for last name.</span>
+<span class="sd">    :type last_name: django.forms.CharField</span>
+<span class="sd">    :param email: EmailField for email.</span>
+<span class="sd">    :type email: django.forms.EmailField</span>
+<span class="sd">    :param address: CharField for address.</span>
+<span class="sd">    :type address: django.forms.CharField</span>
+<span class="sd">    :param postal_code: CharField for postal code.</span>
+<span class="sd">    :type postal_code: django.forms.CharField</span>
+<span class="sd">    :param city: CharField for city.</span>
+<span class="sd">    :type city: django.forms.CharField</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">CARD_CHOICES</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;Mastercard&#39;</span><span class="p">,</span> <span class="s1">&#39;Mastercard&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Visa&#39;</span><span class="p">,</span> <span class="s1">&#39;Visa&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;American_Express&#39;</span><span class="p">,</span> <span class="s1">&#39;American Express&#39;</span><span class="p">),</span>
+    <span class="p">]</span>
+    
+    <span class="n">payment_method</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ChoiceField</span><span class="p">(</span>
+        <span class="n">choices</span><span class="o">=</span><span class="n">CARD_CHOICES</span><span class="p">,</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">RadioSelect</span>
+    <span class="p">)</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">EmailField</span><span class="p">()</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">postal_code</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ContactForm">
+<a class="viewcode-back" href="../../shop.html#shop.forms.ContactForm">[docs]</a>
+<span class="k">class</span> <span class="nc">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Form for contacting the website.</span>
+
+<span class="sd">    :param name: CharField for user&#39;s name.</span>
+<span class="sd">    :type name: django.forms.CharField</span>
+<span class="sd">    :param email: EmailField for user&#39;s email.</span>
+<span class="sd">    :type email: django.forms.EmailField</span>
+<span class="sd">    :param message: CharField for user&#39;s message with TextArea widget.</span>
+<span class="sd">    :type message: django.forms.CharField</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Your Name&quot;</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Your Email&quot;</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">Textarea</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Your Message&quot;</span><span class="p">)</span></div>
+
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ayanda247.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
