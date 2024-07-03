@@ -29,6 +29,12 @@ class Order(models.Model):
         verbose_name_plural = "orders"
 
     def __str__(self):
+        """
+        Returns a string representation of the order.
+
+        Returns:
+            str: The string representation of the order (e.g., "Order 123").
+        """
         return f"Order {self.id}"
 
 
@@ -51,6 +57,12 @@ class Category(models.Model):
         verbose_name_plural = "categories"
 
     def __str__(self):
+        """
+        Returns a string representation of the category.
+
+        Returns:
+            str: The name of the category.
+        """
         return self.name
 
 
@@ -82,6 +94,12 @@ class Product(models.Model):
         verbose_name_plural = "products"
 
     def __str__(self):
+        """
+        Returns a string representation of the product.
+
+        Returns:
+            str: The name of the product.
+        """
         return self.name
 
     def save(self, *args, **kwargs):
@@ -115,6 +133,12 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
+        """
+        Returns a string representation of the order item.
+
+        Returns:
+            str: The ID of the order item.
+        """
         return str(self.id)
 
     def get_cost(self):
@@ -122,7 +146,7 @@ class OrderItem(models.Model):
         Calculates the total cost of the order item.
 
         Returns:
-            The total cost of the order item (price * quantity).
+            decimal.Decimal: The total cost of the order item (price * quantity).
         """
         return self.price * self.quantity
 
@@ -144,4 +168,11 @@ class Inquiry(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+        """
+        Returns a string representation of the inquiry.
+
+        Returns:
+            str: A formatted string representing the inquiry.
+        """
         return f"Inquiry from {self.name}"
+

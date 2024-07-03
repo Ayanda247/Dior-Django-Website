@@ -5,13 +5,16 @@ class UserRegistrationForm(forms.Form):
     """
     Form for user registration.
 
-    Fields:
-    - username: CharField for username with validation on length and widget for styling.
-    - email: EmailField for email with validation on length and widget for styling.
-    - password1: CharField for password with validation on length and widget for password input.
-    - password2: CharField for confirming password with validation on length and widget for password input.
-
+    :param username: CharField for username with validation on length and widget for styling.
+    :type username: django.forms.CharField
+    :param email: EmailField for email with validation on length and widget for styling.
+    :type email: django.forms.EmailField
+    :param password1: CharField for password with validation on length and widget for password input.
+    :type password1: django.forms.CharField
+    :param password2: CharField for confirming password with validation on length and widget for password input.
+    :type password2: django.forms.CharField
     """
+    
     username = forms.CharField(
         label='Username',
         max_length=10,
@@ -37,21 +40,26 @@ class UserRegistrationForm(forms.Form):
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
 
-
 class PaymentForm(forms.Form):
     """
     Form for payment details.
 
-    Fields:
-    - payment_method: ChoiceField for selecting payment method with predefined choices and radio widget.
-    - first_name: CharField for first name.
-    - last_name: CharField for last name.
-    - email: EmailField for email.
-    - address: CharField for address.
-    - postal_code: CharField for postal code.
-    - city: CharField for city.
-
+    :param payment_method: ChoiceField for selecting payment method with predefined choices and radio widget.
+    :type payment_method: django.forms.ChoiceField
+    :param first_name: CharField for first name.
+    :type first_name: django.forms.CharField
+    :param last_name: CharField for last name.
+    :type last_name: django.forms.CharField
+    :param email: EmailField for email.
+    :type email: django.forms.EmailField
+    :param address: CharField for address.
+    :type address: django.forms.CharField
+    :param postal_code: CharField for postal code.
+    :type postal_code: django.forms.CharField
+    :param city: CharField for city.
+    :type city: django.forms.CharField
     """
+    
     CARD_CHOICES = [
         ('Mastercard', 'Mastercard'),
         ('Visa', 'Visa'),
@@ -69,18 +77,20 @@ class PaymentForm(forms.Form):
     postal_code = forms.CharField(max_length=20)
     city = forms.CharField(max_length=100)
 
-
 class ContactForm(forms.Form):
     """
     Form for contacting the website.
 
-    Fields:
-    - name: CharField for user's name.
-    - email: EmailField for user's email.
-    - message: CharField for user's message with TextArea widget.
-
+    :param name: CharField for user's name.
+    :type name: django.forms.CharField
+    :param email: EmailField for user's email.
+    :type email: django.forms.EmailField
+    :param message: CharField for user's message with TextArea widget.
+    :type message: django.forms.CharField
     """
+    
     name = forms.CharField(max_length=100, label="Your Name")
     email = forms.EmailField(label="Your Email")
     message = forms.CharField(widget=forms.Textarea, label="Your Message")
+
 
