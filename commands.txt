@@ -1,0 +1,18 @@
+# Step 1: Clone the repository (if not already done)
+git clone <your-repo-url>
+cd <your-repo-directory>
+
+# Step 2: Build the Docker image
+docker build -t django-ecommerce .
+
+# Step 3: Run database migrations
+docker run --rm -v $(pwd):/app django-ecommerce python manage.py migrate
+
+# Step 4: Collect static files
+docker run --rm -v $(pwd):/app django-ecommerce python manage.py collectstatic --noinput
+
+# Step 5: Create a superuser (optional, for accessing the Django admin)
+docker run --rm -v $(pwd):/app django-ecommerce python manage.py createsuperuser
+
+# Step 6: Run the Docker container
+docker run -p 8000:8000 django-ecommerce
